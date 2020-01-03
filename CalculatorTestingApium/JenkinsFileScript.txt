@@ -1,0 +1,23 @@
+node {
+   stage ('clean'){
+        bat label: 'clean', script: 'mvn clean'
+   }
+     stage('validate') {
+       bat label: 'validate', script: 'mvn validate'
+   }
+     stage('compile') {
+       bat label: 'compile', script: 'mvn compile'
+   }
+   stage('package') {
+       bat label: 'validate', script: 'mvn package'
+   }
+    stage('install stage'){
+          bat label: 'install', script: 'mvn install'
+           }
+     
+   stage('verify Stage')
+      {
+                             bat "mvn verify"
+                         }
+       
+}
